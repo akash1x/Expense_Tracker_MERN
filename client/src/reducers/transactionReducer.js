@@ -1,21 +1,21 @@
-import { ADD_TXN, DELETE_TXN } from "../Actions/types";
+import { ADD_TXN, DELETE_TXN, GET_ITEMS } from "../Actions/types";
 
 const initialState = {
-  transactions: [
-    { id: 1, text: "milk", amount: -20 },
-    { id: 2, text: "curd", amount: -30 },
-    { id: 3, text: "pepsi", amount: -40 },
-    { id: 4, text: "salary", amount: 200 },
-  ],
+  transactions: [],
 };
 
 export const transactionReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_ITEMS:
+      return {
+        ...state,
+        transactions: action.payload,
+      };
     case DELETE_TXN:
       return {
         ...state,
         transactions: state.transactions.filter(
-          (transaction) => transaction.id !== action.payload
+          (transaction) => transaction._id !== action.payload
         ),
       };
     case ADD_TXN:

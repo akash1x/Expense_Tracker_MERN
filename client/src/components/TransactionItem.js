@@ -18,7 +18,7 @@ const TransactionItem = ({ transaction }) => {
         </span>
         <button
           className="delete-btn"
-          onClick={() => performDeleteTransaction(transaction.id)}
+          onClick={() => performDeleteTransaction(transaction._id)}
         >
           x
         </button>

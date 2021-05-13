@@ -7,6 +7,12 @@ app.use(express.json());
 
 const dbURI = config.get("mongoURI");
 
+const transactions = require("./routes/api/transactions");
+
+app.use(express.json());
+
+app.use("/api/transactions/", transactions);
+
 mongoose
   .connect(dbURI)
   .then(console.log("DB connected.."))
