@@ -12,7 +12,7 @@ const TransactionItem = ({ transaction }) => {
   return (
     <div>
       <li className={sign === "+" ? "plus" : "minus"}>
-        {transaction.text}{" "}
+        {transaction.name}{" "}
         <span>
           {sign} Rs{Math.abs(transaction.amount)}{" "}
         </span>
